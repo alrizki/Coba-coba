@@ -1,0 +1,52 @@
+<form name=form>
+<script>
+function proses()
+{
+ var dep=document.form.departemen.value;
+ var gol=document.form.gol.value;
+ if (dep=='hrd')
+	{
+	 if (gol=='a') var gaji=3000000;
+     if (gol=='b') var gaji=3100000;
+	 if (gol=='c') var gaji=3200000;				 
+	}			 
+ if (dep=='produksi') 
+    {
+	 if (gol=='a') var gaji=2500000;
+     if (gol=='b') var gaji=2700000;
+	 if (gol=='c') var gaji=3000000;				 
+	}			 
+ if (dep=='it')
+    {
+	 if (gol=='a') var gaji=5000000;
+     if (gol=='b') var gaji=5500000;
+	 if (gol=='c') var gaji=6000000;				 
+	}			 
+ document.form.gaji.value=gaji;
+}
+</script>
+
+<html>
+<center>
+<h1>
+Program Gaji
+<hr>
+<table>
+	<tr><td> Nama <td> <input type=text name=namakaryawan size=20>
+	<tr><td> Departemen <td> <select name=departemen>
+			                   <option value="hrd">HRD
+			                   <option value="produksi">Produksi
+			                   <option value="it">IT
+			                 </select>
+
+	<tr><td> Golongan <td> <select name=gol>
+                             <option value="a">A
+                             <option value="b">B
+                             <option value="c">C
+                           </select>
+
+<tr><td> Gaji <td> <input type=text name=gaji size=20>
+</table>
+<hr>
+<input type=button value="Proses" onclick=proses()>
+<input type=reset value="Reset">
